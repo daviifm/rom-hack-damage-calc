@@ -707,3 +707,16 @@ table.field {
 .flex-parent {
 	display: flex;
 }
+
+/* === Customizations === */
+.evs {
+  display: none;
+}
+
+td:has(.evs) {
+  display: none !important;
+}
+
+.evs-header {
+  display: none !important;
+}

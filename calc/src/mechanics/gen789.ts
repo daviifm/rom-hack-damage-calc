@@ -231,7 +231,7 @@ export function calculateSMSSSV(
 
   // Merciless does not ignore Shell Armor, damage dealt to a poisoned Pokemon with Shell Armor
   // will not be a critical hit (UltiMario)
-  const isCritical = !defender.hasAbility('Battle Armor', 'Shell Armor') &&
+  const isCritical = !defender.hasAbility('Battle Armor', 'Shell Armor', 'Magma Armor') &&
     (move.isCrit || (attacker.hasAbility('Merciless') && defender.hasStatus('psn', 'tox'))) &&
     move.timesUsed === 1;
 
@@ -606,8 +606,7 @@ export function calculateSMSSSV(
   // FIXME: this is incorrect, should be move.flags.heal, not move.drain
   if ((attacker.hasAbility('Triage') && move.drain) ||
       (attacker.hasAbility('Gale Wings') &&
-       move.hasType('Flying') &&
-       attacker.curHP() === attacker.maxHP())) {
+       move.hasType('Flying'))) {
     move.priority = 1;
     desc.attackerAbility = attacker.ability;
   }
@@ -1132,7 +1131,7 @@ export function calculateBPModsSMSSSV(
 
   // Field effects
 
-  const terrainMultiplier = gen.num > 7 ? 5325 : 6144;
+  const terrainMultiplier = 6144;
   if (isGrounded(attacker, field)) {
     if ((field.hasTerrain('Electric') && move.hasType('Electric')) ||
         (field.hasTerrain('Grassy') && move.hasType('Grass')) ||
@@ -1272,9 +1271,6 @@ export function calculateBPModsSMSSSV(
     (attacker.hasItem('Vile Vial') &&
      attacker.named('Venomicon-Epilogue') &&
      move.hasType('Poison', 'Flying')) ||
-    (attacker.hasItem('Soul Dew') &&
-     attacker.named('Latios', 'Latias', 'Latios-Mega', 'Latias-Mega') &&
-     move.hasType('Psychic', 'Dragon')) ||
      attacker.item && move.hasType(getItemBoostType(attacker.item)) ||
     (attacker.name.includes('Ogerpon-Cornerstone') && attacker.hasItem('Cornerstone Mask')) ||
     (attacker.name.includes('Ogerpon-Hearthflame') && attacker.hasItem('Hearthflame Mask')) ||
@@ -1491,6 +1487,12 @@ export function calculateAtModsSMSSSV(
   ) {
     atMods.push(6144);
     desc.attackerItem = attacker.item;
+  } else if (attacker.hasItem('Soul Dew') && 
+             attacker.named('Latios', 'Latias') && 
+             move.category == 'Special'
+  ) {
+    atMods.push(6144)
+    desc.attackerItem = attacker.item;
   }
   return atMods;
 }
@@ -1622,7 +1624,8 @@ export function calculateDfModsSMSSSV(
 
   if ((defender.hasItem('Eviolite') &&
       (defender.name === 'Dipplin' || gen.species.get(toID(defender.name))?.nfe)) ||
-      (!hitsPhysical && defender.hasItem('Assault Vest'))) {
+      (!hitsPhysical && defender.hasItem('Assault Vest')) || ((defender.hasItem('Soul Dew')) && 
+       defender.named('Latios', 'Latias') && !hitsPhysical)) {
     dfMods.push(6144);
     desc.defenderItem = defender.item;
   } else if (
