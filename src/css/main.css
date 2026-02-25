@@ -25,7 +25,7 @@ header {
     /* background: rgba(255, 255, 255, .2);
     border-bottom: 1px solid rgba(255, 255, 255, .6); */
     text-align: center;
-    height: 60px;
+    height: 0px;
 }
 .nav-wrapper {
     width: 700px;
@@ -719,4 +719,16 @@ td:has(.evs) {
 
 .evs-header {
   display: none !important;
+}
+
+div[aria-label="Settings"] {
+    display: none;
+}
+
+.nav-wrapper {
+    display: none;
+}
+
+div[aria-labelledby="selectDefaultLevelInstruction"] {
+    display: none;
 }
