@@ -721,11 +721,19 @@ td:has(.evs) {
   display: none !important;
 }
 
-div[aria-label="Settings"] {
+.nav-wrapper {
     display: none;
 }
 
-.nav-wrapper {
+.z-btn {
+    display: none !important;
+}
+
+div[class="gen-specific g9"] {
+    display: none !important;
+}
+
+div[aria-label="Settings"] {
     display: none;
 }
 
