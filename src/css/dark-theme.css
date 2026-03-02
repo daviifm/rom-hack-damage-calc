@@ -2,9 +2,8 @@
 
 :root {
     --text: #e4e4e4;
-
-    --background: #1b1b1b;
     --button-hover: black;
+    --background: #1b1b1b;
     --button-selected: #232e51;
     --fieldset-color: #2a2a2a;
 
@@ -24,7 +23,7 @@ a:visited {
 }
 
 .btn {
-    background: #2a2a2a;
+    background: var(--background);
     border-color: #aaaaaa;
     text-shadow: none;
     color: #e4e4e4;
