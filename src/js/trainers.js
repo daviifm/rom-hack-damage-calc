@@ -16,7 +16,7 @@ const trainers = [
             level: 100,
             ability: "Unburden",
             nature: "Naive",
-            moves: ["Final Gambit", "Bug Buzz", "U-Turn", "First Impression"]
+            moves: ["Final Gambit", "Bug Buzz", "U-turn", "First Impression"]
             }
         ]
     },
