@@ -1744,7 +1744,7 @@ function loadDefaultLists() {
 		query: function (query) {
 			var pageSize = 30;
 			var results = [];
-			var options = getSetOptions();
+			var options = getTrainerSetOptions();
 			for (var i = 0; i < options.length; i++) {
 				var option = options[i];
 				var pokeName = option.pokemon.toUpperCase();

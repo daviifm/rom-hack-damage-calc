@@ -5,7 +5,7 @@ const trainers = [
             {
             name: "Abomasnow",
             item: "Heavy-Duty Boots",
-            level: 100,
+            level: 99,
             ability: "Snow Warning",
             nature: "Bold",
             moves: ["Blizzard", "Wood Hammer", "Icy Wind", "Ice Shard"]
@@ -32,12 +32,12 @@ const trainers = [
             moves: ["Ice Spinner", "Ice Shard", "Night Slash", "Brick Break"]
             },
             {
-            name: "Rattata",
+            name: "Porygon",
             item: "Focus Sash",
             level: 100,
-            ability: "Guts",
-            nature: "Naive",
-            moves: ["Endeavor", "Quick Attack", "Hyper Fang", "Crunch"]
+            ability: "Trace",
+            nature: "Timid",
+            moves: ["Conversion", "Zap Cannon", "Recover", "Self-Destruct"]
             }
         ]
     }
