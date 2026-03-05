@@ -688,12 +688,39 @@
                 </select>
             </div>
         </fieldset>
+        <div aria-label="trainer-mons" role="region">
+            <fieldset id="team-box">
+                <legend align="center">Team/Box</legend>
+                <div>
+                    <legend align="center">Team</legend>
+                    <div id="team-list" class="box-poke dropzone"></div>
+                </div>
+                <hr>
+                <div>
+                    <legend align="center">Box</legend>
+                    <div id="box-list" class="box-poke dropzone"></div>
+                </div>
+                <div>
+                    <legend align="center">Box 2</legend>
+                    <div id="box-list2" class="box-poke dropzone"></div>
+                </div>
+                <hr>
+                <div>
+                    <legend align="center">Trash</legend>
+                    <div id="trash-list" class="box-poke dropzone"></div>
+                    <button id="trash-pok">Remove from trash</button>
+                    <button id="clear-sets">Remove from all boxes</button>
+                </div>
+            </fieldset>
+        </div>
     </div>
-
     <div class="panel">
         <div aria-label="Field information" role="region">
             <fieldset class="field-info">
-                <legend align="center">Field</legend>
+                <legend align="center">
+                    Field
+                    <img id="fieldmon" src="https://raw.githubusercontent.com/May8th1995/sprites/master/Porygon-Z.png">
+                </legend>
                 <div aria-labelledby="selectBattleFormatInstruction" class="gen-specific g3 g4 g5 g6 g7 g8 g9" role="radiogroup" style="width: 10.6em; margin: 0 auto 5px;" title="Select the battle format.">
                     <span class="visually-hidden" id="selectBattleFormatInstruction">Select the battle format.</span>
                     <input class="visually-hidden calc-trigger" type="radio" name="format" value="Singles" id="singles-format" />
@@ -1624,14 +1651,11 @@
             </div>
         </fieldset>
         </div>
-            <!--Acredito que eu deveria colocar o fieldset aqui:-->
             <fieldset id="opposing-team">
                 <legend>Opposing Team</legend>
     
-                <!-- ícones dos pokemon vão aparecer aqui dinamicamente -->
                 <div id="opposing-team-icons"></div>
     
-                <!-- botões de navegação -->
                 <div>
                     <button id="prev-trainer">Previous Trainer</button>
                     <button id="next-trainer">Next Trainer</button>
@@ -1685,6 +1709,7 @@
     <script type="text/javascript" src="./calc/index.js?"></script>
     <script type="text/javascript" src="./js/shared_controls.js?"></script>
     <script type="text/javascript" src="./js/index_randoms_controls.js?"></script>
+    <script type="text/javascript" src="./js/player_controls.js"></script>
     <script type="text/javascript" src="./js/moveset_import.js?"></script>
     <script type="text/javascript" src="./js/trainers.js"></script>
     <script type="text/javascript" src="./js/trainer_controls.js"></script>

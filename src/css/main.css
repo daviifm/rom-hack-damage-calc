@@ -729,6 +729,12 @@ td:has(.evs) {
     display: none !important;
 }
 
+.box-poke {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 320px;
+}
+
 div[class="gen-specific g9"] {
     display: none !important;
 }
